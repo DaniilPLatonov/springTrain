@@ -26,4 +26,9 @@ public class AddressController {
         return name + " removed from address book!";
     }
 
+    @GetMapping("/addresses")
+    public ConcurrentMap<String, String> getAddressBook() {
+        return addressBook;
+    }
+
 }
