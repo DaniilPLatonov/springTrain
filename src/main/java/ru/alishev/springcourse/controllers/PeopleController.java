@@ -8,7 +8,7 @@ import ru.alishev.springcourse.DAO.PersonDAO;
 import ru.alishev.springcourse.models.Person;
 
 @Controller
-@RequestMapping(value = "people", name = "d")
+@RequestMapping("/people")
 public class PeopleController {
 
     private final PersonDAO personDAO;
@@ -17,7 +17,6 @@ public class PeopleController {
     public PeopleController(PersonDAO personDAO) {
         this.personDAO = personDAO;
     }
-    @RequestMapping(value = "people", name = "d")
     @GetMapping()
     public String index(Model model) {
         model.addAttribute("people", personDAO.index());
@@ -48,5 +47,4 @@ public class PeopleController {
         model.addAttribute("person", personDAO.show(id));
         return "people/edit";
     }
-
 }
