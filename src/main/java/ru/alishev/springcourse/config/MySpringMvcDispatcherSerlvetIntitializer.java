@@ -13,6 +13,8 @@ public class MySpringMvcDispatcherSerlvetIntitializer extends AbstractAnnotation
         return new Class[] {SpringConfig.class};
     }
 
+
+
     @Override
     protected String[] getServletMappings() {
         return new String[] {"/"};
