@@ -17,6 +17,7 @@ public class PeopleController {
 
     private final PersonDAO personDAO;
     private final PersonValidator personValidator;
+
     @Autowired
     public PeopleController(PersonDAO personDAO, PersonValidator personValidator) {
         this.personDAO = personDAO;
@@ -43,7 +44,7 @@ public class PeopleController {
     @PostMapping()
     public String create(@ModelAttribute("person") @Valid Person person, BindingResult bindingResult) {
 
-personValidator.validate(person, bindingResult);
+        personValidator.validate(person, bindingResult);
 
         if (bindingResult.hasErrors())
             return "people/new";
