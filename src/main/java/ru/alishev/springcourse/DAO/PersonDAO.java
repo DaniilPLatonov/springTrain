@@ -53,7 +53,7 @@ public class PersonDAO {
 
     //тестируем производительность пакетной вставки
 
-    public void testMultipleUpdate() {
+   public void testMultipleUpdate() {
         List<Person> people = create1000people();
         long before = System.currentTimeMillis();
 
